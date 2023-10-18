@@ -1,0 +1,37 @@
+{
+  "name": "@erbelion/debounce",
+  "version": "0.0.1",
+  "description": "ez debouncer",
+  "author": "erbelion",
+  "keywords": [
+    "utils",
+    "node",
+    "browser",
+    "debounce"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erbelion/debounce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erbelion/debounce/issues"
+  },
+  "homepage": "https://github.com/erbelion/debounce#readme",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "dist/index",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
