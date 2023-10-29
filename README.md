@@ -14,7 +14,7 @@ yarn add @erbelion/debounce
 npm i @erbelion/debounce
 ```
 
-## Usage (TS)
+## Usage
 ```
 import debounce from '@erbelion/debounce'
 
@@ -23,19 +23,18 @@ const refresh = debounce(() => {
 }, 1000) // delay in milliseconds
 
 refresh() // invokes doSomething() after 1000ms, unless called again
-refresh.invoke!() // another way to use refresh()
-refresh.invokeNow!() // invoke refresh() immediately
-```
+refresh.invoke() // same as above
 
-## Usage (JS)
-```
-import debounce from '@erbelion/debounce'
-
-const refresh = debounce(() => {
-    doSomething()
-}, 1000) // delay in milliseconds
-
-refresh() // invokes doSomething() after 1000ms, unless called again
-refresh.invoke() // another way to use refresh()
 refresh.invokeNow() // invoke refresh() immediately
+
+refresh.cancel() // cancels refresh() if it has been invoked
+
+refresh.overwrite(() => {
+    doSomethingElse()
+}, 2000) // cancels refresh() and overwrites the debouncer
+
+const refresh = debounce() // init without callable function and delay
+
+refresh.reset() // cancels refresh(), resets callable function and delay
+refresh.overwrite() // same as above
 ```
